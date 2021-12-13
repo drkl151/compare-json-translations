@@ -170,6 +170,15 @@ export default {
     },
   },
 
+  watch: {
+    dataTable: {
+      handler() {
+        this.formattingData();
+      },
+      deep: true,
+    },
+  },
+
   computed: {
     //search by keys
     searchingKeys() {
@@ -184,6 +193,50 @@ export default {
   },
 
   methods: {
+    //data formatting
+    formattingData() {
+      if (Object.keys(this.dataTable).length) {
+        const formattedObject = {};
+        const duplicate = {};
+        const generalArrayAllValues = [];
+
+        Object.entries(this.dataTable).forEach(([dataKey, dataValue]) => {
+          generalArrayAllValues.push(...Object.values(dataValue));
+
+          const duplicateValue = Object.values(dataValue).filter(
+            (item, index) => {
+              return Object.values(dataValue).indexOf(item) !== index;
+            }
+          );
+
+          duplicate[dataKey] = duplicateValue;
+        });
+
+        const duplicateAllArrays = generalArrayAllValues.filter(
+          (item, index) => {
+            return generalArrayAllValues.indexOf(item) !== index;
+          }
+        );
+
+        Object.entries(this.dataTable).forEach(([dataKey, dataValue]) => {
+          Object.entries(dataValue).forEach(([key, value]) => {
+            formattedObject[key] = {
+              ...formattedObject[key],
+              [dataKey]: {
+                content: value,
+                isDuplicate: duplicate[dataKey].includes(value),
+                index: duplicate[dataKey].indexOf(value),
+                isDuplicateInAllArrays: duplicateAllArrays.includes(value),
+              },
+            };
+          });
+        });
+
+        this.constFormattedData = formattedObject;
+        this.formattedData = formattedObject;
+      }
+    },
+
     //show duplicates of the selected word
     showDuplicate(fileName, content) {
       if (this.isDuplicatesFiltered) {
@@ -295,47 +348,7 @@ export default {
   },
 
   mounted() {
-    //data formatting
-    if (Object.keys(this.dataTable).length) {
-      const formattedObject = {};
-      const duplicate = {};
-      const generalArrayAllValues = [];
-
-      console.log(this.dataTable);
-
-      Object.entries(this.dataTable).forEach(([dataKey, dataValue]) => {
-        generalArrayAllValues.push(...Object.values(dataValue));
-
-        const duplicateValue = Object.values(dataValue).filter(
-          (item, index) => {
-            return Object.values(dataValue).indexOf(item) !== index;
-          }
-        );
-
-        duplicate[dataKey] = duplicateValue;
-      });
-
-      const duplicateAllArrays = generalArrayAllValues.filter((item, index) => {
-        return generalArrayAllValues.indexOf(item) !== index;
-      });
-
-      Object.entries(this.dataTable).forEach(([dataKey, dataValue]) => {
-        Object.entries(dataValue).forEach(([key, value]) => {
-          formattedObject[key] = {
-            ...formattedObject[key],
-            [dataKey]: {
-              content: value,
-              isDuplicate: duplicate[dataKey].includes(value),
-              index: duplicate[dataKey].indexOf(value),
-              isDuplicateInAllArrays: duplicateAllArrays.includes(value),
-            },
-          };
-        });
-      });
-
-      this.constFormattedData = formattedObject;
-      this.formattedData = formattedObject;
-    }
+    this.formattingData();
   },
 };
 </script>

@@ -22,8 +22,7 @@ module.exports = function (pathToFolder) {
     })
 
     createdConfig.then(() => {
-      const qwe = shell.exec(`cd ${currentDirGetTable} && npm run serve`)
-      console.log(qwe);
+      const qwe = shell.exec(`cd ${currentDirGetTable} && npm run serve`);
     });
 
   } catch (err) {
