@@ -2,8 +2,6 @@ module.exports = function (pathToFolder) {
   try {
     const fs = require('fs');
     const path = require('path');
-    const shell = require("shelljs");
-    const currentDirGetTable = __dirname.replace(/\\/g, '/');
 
     const createdConfig = new Promise((resolve) => {
       const jsonInDir = fs.readdirSync(pathToFolder).filter(file => path.extname(file) === '.json');
@@ -17,12 +15,11 @@ module.exports = function (pathToFolder) {
         result[fileName] = { ...json };
       });
 
-
-      fs.writeFile(`${currentDirGetTable}/src/compare-json-translations.config.js`, `export default ${JSON.stringify(result)}`, (err) => { resolve() });
+      fs.writeFile(`${__dirname}/src/compare-json-translations.config.js`, `export default ${JSON.stringify(result)}`, (err) => { resolve() });
     })
 
     createdConfig.then(() => {
-      const qwe = shell.exec(`cd ${currentDirGetTable} && npm run serve`);
+      shell.exec(`cd ${__dirname} && npm run serve`);
     });
 
   } catch (err) {

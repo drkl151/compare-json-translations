@@ -1,10 +1,14 @@
 # :us: compare-json-translations
+https://img.shields.io/npm/v/compare-json-translations  
+https://img.shields.io/npm/dm/compare-json-translations  
+https://img.shields.io/github/watchers/drkl151compare-json-translations?style=social
+
 
 ## Description
 This npm compares all .json files and allows the user to quickly find missing or duplicate values ​​in those files.
 
 ## Usage
-**1. First of all, you need to go to the directory where the .json files you want to check are located**  
+**1. First of all, you need to go to the directory where the .json files yo]u want to check are located**  
 **2. Then call the command:**  `npx compare-json-translations`  
 **3. Wait a bit for data processing and table creation**
 
@@ -18,11 +22,11 @@ This npm compares all .json files and allows the user to quickly find missing or
 * You can use the search by keys in the upper right corner.
 * And also you can filter the table by the values ​​you are interested in  
 (you can get information about filters by hovering your cursor over the icon with the "**?**" sign).
-* If you want to delete one of the json files, just click the "✖" icon in the cell with the name of that file.
+* If you want to remove one of the .json files from the table, simply click the "✖" icon in the cell with the file's name.  
 
 
 
-# :ru: compare-json-translations (Перевод)
+# :ru: compare-json-translations (Перевод rus)
 
 ## Описание
 Этот npm сравнивает все файлы .json и позволяет пользователю быстро находить отсутствующие или повторяющиеся значения в этих файлах.
@@ -44,4 +48,4 @@ This npm compares all .json files and allows the user to quickly find missing or
 * Вы можете воспользоваться поиском по ключам в правом верхнем углу.
 * А также вы можете отфильтровать таблицу по интересующим вас значениям  
 (вы cможете получить информацию о фильтрах, наведя курсор на иконку со знаком «**?**»).
-* Если вы хотите удалить один из файлов json, просто щелкните значок «✖» в ячейке с именем этого файла.
+* Если вы хотите удалить один из файлов .json из таблицы, просто щелкните значок «✖» в ячейке с именем этого файла.

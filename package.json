@@ -1,11 +1,15 @@
 {
   "name": "compare-json-translations",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "get-table": "node bin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drkl151/compare-json-translations"
   },
   "dependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -33,7 +37,15 @@
     "get-table": "./bin.js"
   },
   "keywords": [
-    "translation"
+    "compare-json-translations",
+    "translation",
+    "json",
+    "compare",
+    "translations-files",
+    "compare-files",
+    "compare-json",
+    "check-translation",
+    "check-files"
   ],
   "author": {
     "name": "Elena",
