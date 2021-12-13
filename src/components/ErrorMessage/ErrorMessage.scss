@@ -1,0 +1,16 @@
+@import "../../styles/generalStyle.scss";
+
+.no-data {
+  width: 97%;
+  margin: 130px auto;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid $c-black;
+  border-radius: 3px;
+  background-color: $c-white;
+
+  &__title {
+    margin: 0 0 5px 0;
+    font-size: 34px;
+  }
+}

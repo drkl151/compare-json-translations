@@ -1,0 +1,43 @@
+{
+  "name": "compare-json-translations",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
+    "get-table": "node bin"
+  },
+  "dependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "core-js": "^3.6.5",
+    "debounce": "^1.2.1",
+    "fs": "0.0.1-security",
+    "glob": "^7.2.0",
+    "node-sass": "^4.12.0",
+    "path": "^0.12.7",
+    "sass-loader": "^8.0.2",
+    "shelljs": "^0.8.4",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "description": "An npm package that makes it easy to work with translation files",
+  "main": "babel.config.js",
+  "bin": {
+    "get-table": "./bin.js"
+  },
+  "keywords": [
+    "translation"
+  ],
+  "author": {
+    "name": "Elena",
+    "email": "yesdazzle@gmail.com"
+  },
+  "license": "ISC"
+}

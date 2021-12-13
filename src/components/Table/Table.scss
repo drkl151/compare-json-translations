@@ -1,0 +1,228 @@
+@import "../../styles/generalStyle.scss";
+
+.table {
+  .filtration-block {
+    margin-top: 81px;
+    padding: 20px;
+    font-size: 18px;
+    display: flex;
+
+    .color-designation-block {
+      .color-designation-prompt {
+        margin-right: 10px;
+        padding: 13px;
+        border: 1px solid $c-black;
+        border-radius: 6px;
+        background-color: #fcececad;
+        box-shadow: inset 0 -1px 5px rgba(0, 0, 0, 0.671);
+        cursor: help;
+
+        p {
+          margin: 0;
+          font-size: 22px;
+        }
+
+        &:hover {
+          .color-designation {
+            display: block;
+          }
+        }
+      }
+
+      .color-designation {
+        display: none;
+        padding: 13px;
+        border: 1px solid $c-black;
+        border-radius: 6px;
+        background-color: #fcecec;
+        box-shadow: inset 0 -1px 5px rgba(0, 0, 0, 0.671);
+        list-style: none;
+        position: absolute;
+        left: 8px;
+        top: 155px;
+        z-index: 120;
+
+        &::before {
+          content: "";
+          width: 20px;
+          height: 20px;
+          border-left: 1px solid $c-black;
+          border-bottom: 1px solid $c-black;
+          background-color: #fcecec;
+          position: absolute;
+          left: 20px;
+          top: -11px;
+          transform: rotate(-225deg);
+        }
+
+        li::before {
+          content: "";
+          display: inline-block;
+          top: -2px;
+          width: 8px;
+          height: 8px;
+          position: relative;
+          border-radius: 50%;
+          border: 1px solid $c-black;
+        }
+
+        &__yellow::before {
+          background-color: $c-yellow;
+        }
+
+        &__orange::before {
+          background-color: $c-orange;
+        }
+
+        &__red::before {
+          background-color: $c-red;
+        }
+      }
+    }
+
+    &__checkbox {
+      .filtration-input {
+        position: absolute;
+        opacity: 0;
+      }
+    }
+
+    label {
+      margin-right: 10px;
+      padding: 13px;
+      border: 1px solid rgb(0, 0, 0);
+      border-radius: 6px;
+      background-color: #fcececad;
+      box-shadow: inset 0 -1px 5px rgba(0, 0, 0, 0.671);
+    }
+
+    .filtration-input + label {
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    .filtration-input + label::before {
+      content: "";
+      width: 25px;
+      height: 25px;
+      margin-right: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("../../assets/icon-hide.svg");
+      background-position: center;
+      background-size: contain;
+    }
+
+    .filtration-input:checked + label::before {
+      content: "";
+      font-size: 22px;
+      background-image: url("../../assets/icon-show.svg");
+      background-position: 0px -2px;
+    }
+  }
+
+  table {
+    background-color: $c-white;
+    border-collapse: collapse;
+    margin: 50px 20px;
+    font-size: 18px;
+
+    th,
+    td {
+      min-width: 420px;
+      border: 2px solid $c-black;
+    }
+
+    th {
+      padding: 12px;
+      text-transform: uppercase;
+      font-size: 20px;
+      position: relative;
+
+      .delete-table-column {
+        width: 20px;
+        height: 20px;
+        font-size: 15px;
+        position: absolute;
+        right: 7px;
+        top: 5px;
+        border-radius: 50%;
+        padding: 2px;
+        cursor: pointer;
+
+        &::before {
+          content: "\2716";
+        }
+      }
+    }
+
+    td {
+      padding: 7px 29px 7px 7px;
+      position: relative;
+    }
+
+    .keys {
+      font-weight: 700;
+      color: $c-black;
+    }
+
+    .empty {
+      background-color: $c-red;
+    }
+
+    .duplicate {
+      background-color: $c-orange;
+    }
+
+    .duplicateAllFiles {
+      background-color: $c-yellow;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    h3 {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      z-index: 20;
+      cursor: pointer;
+      margin: 0;
+
+      .icon-duplicate {
+        width: 20px;
+      }
+    }
+  }
+
+  .error-message-content {
+    margin: 0;
+    font-size: 28px;
+  }
+
+  .show-all-result-button {
+    width: 260px;
+    height: 28px;
+    font-size: 18px;
+    margin: 30px 0 10px 0;
+    background-color: transparent;
+    border: 2px solid $c-black;
+    border-radius: 2px;
+    transition: 0.4s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(218, 209, 209, 0.589);
+    }
+  }
+}
