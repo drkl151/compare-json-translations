@@ -1,4 +1,4 @@
-![table-img](./src/assets/logo.png)  
+![table-header](./src/assets/assetsForReadme/table-header.png)  
 
 [![git-watchers](https://img.shields.io/github/watchers/drkl151/compare-json-translations?style=social)](https://github.com/drkl151/compare-json-translations)
 [![git-watchers](https://img.shields.io/github/stars/drkl151/compare-json-translations?style=social)](https://github.com/drkl151/compare-json-translations)  

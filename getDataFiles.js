@@ -2,6 +2,7 @@ module.exports = function (pathToFolder) {
   try {
     const fs = require('fs');
     const path = require('path');
+    const shell = require("shelljs");
 
     const createdConfig = new Promise((resolve) => {
       const jsonInDir = fs.readdirSync(pathToFolder).filter(file => path.extname(file) === '.json');
